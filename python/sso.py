@@ -10,7 +10,7 @@ LOGORA_PUBLIC_KEY = 'abcdef'
 def get_logora_sso(user):
     # create a JSON packet of our data attributes
     data = simplejson.dumps({
-        'id': user['id'],
+        'uid': user['uid'],
         'first_name': user['first_name'],
         'last_name': user['last_name'],
         'email': user['email'],
