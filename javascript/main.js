@@ -3,7 +3,7 @@ var LOGORA_PUBLIC = "asdf";
 
 function logoraSignon(user) {
     var logoraData = {
-      id: user.id,
+      uid: user.uid,
       first_name : user.first_name,
       last_name: user.last_name,
       email: user.email
