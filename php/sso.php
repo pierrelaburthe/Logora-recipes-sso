@@ -3,7 +3,7 @@ define('LOGORA_SECRET_KEY', '123456');
 define('LOGORA_PUBLIC_KEY', 'abcdef');
 
 $data = array(
-        "id" => $user["id"],
+        "uid" => $user["uid"],
         'first_name'=> $user['first_name'],
         'last_name'=> $user['last_name'],
         "email" => $user["email"]
