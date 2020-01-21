@@ -22,7 +22,7 @@ def get_logora_sso(user)
     # generate a timestamp for signing the message
     timestamp = Time.now.to_i
     # generate our hmac signature
-    sig = OpenSSL::HMAC.hexdigest('sha1', LOGORA_SECRET_KEY, '%s %s' % [message, timestamp])
+    sig = OpenSSL::HMAC.hexdigest('sha1', LOGORA_SECRET_KEY, '%s %s' % [payload, timestamp])
 
     # return a script tag to insert the sso message
     return "<script type=\"text/javascript\">
