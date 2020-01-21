@@ -30,5 +30,4 @@ def get_logora_sso(user):
         message=message,
         timestamp=timestamp,
         sig=sig,
-        pub_key=LOGORA_PUBLIC_KEY,
     )
