@@ -34,6 +34,6 @@ $hmac = dsq_hmacsha1($message . ' ' . $timestamp, LOGORA_SECRET_KEY);
 ?>
 <script type="text/javascript">
 var logora_config = {
-    remote_auth = "<?php echo "$message $hmac $timestamp"; ?>";
+    remote_auth: "<?php echo "$message $hmac $timestamp"; ?>";
 }
 </script>
