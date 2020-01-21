@@ -1,6 +1,5 @@
 <?php
 define('LOGORA_SECRET_KEY', '123456');
-define('LOGORA_PUBLIC_KEY', 'abcdef');
 
 $data = array(
         "uid" => $user["uid"],
@@ -34,8 +33,7 @@ $timestamp = time();
 $hmac = dsq_hmacsha1($message . ' ' . $timestamp, LOGORA_SECRET_KEY);
 ?>
 <script type="text/javascript">
-var logora_config = function() {
-    this.page.remote_auth_s3 = "<?php echo "$message $hmac $timestamp"; ?>";
-    this.page.api_key = "<?php echo LOGORA_PUBLIC_KEY; ?>";
+var logora_config = {
+    remote_auth = "<?php echo "$message $hmac $timestamp"; ?>";
 }
 </script>
