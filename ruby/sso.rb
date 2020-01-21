@@ -18,7 +18,7 @@ def get_logora_sso(user)
     }.to_json
 
     # encode the data to base64
-    message  = Base64.encode64(data).gsub("\n", "")
+    payload  = Base64.encode64(data).gsub("\n", "")
     # generate a timestamp for signing the message
     timestamp = Time.now.to_i
     # generate our hmac signature
@@ -27,7 +27,7 @@ def get_logora_sso(user)
     # return a script tag to insert the sso message
     return "<script type=\"text/javascript\">
         var logora_config = {
-            remote_auth: \"#{message} #{sig} #{timestamp}\"
+            remote_auth: \"#{payload} #{sig} #{timestamp}\"
         }
   </script>"
 end
