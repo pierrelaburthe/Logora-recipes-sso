@@ -5,7 +5,6 @@ require 'openssl'
 require "json"
 
 LOGORA_SECRET_KEY = '<YOUR_SECRET_KEY>'
-LOGORA_PUBLIC_KEY = '<YOUR_PUBLIC_KEY>'
 
 def get_logora_sso(user)
     # create a JSON packet of our data attributes
@@ -27,9 +26,8 @@ def get_logora_sso(user)
 
     # return a script tag to insert the sso message
     return "<script type=\"text/javascript\">
-        var logora_config = function() {
-            this.page.remote_auth_s3 = \"#{message} #{sig} #{timestamp}\";
-            this.page.api_key = \"#{LOGORA_PUBLIC_KEY}\";
+        var logora_config = {
+            remote_auth: \"#{message} #{sig} #{timestamp}\"
         }
   </script>"
 end
