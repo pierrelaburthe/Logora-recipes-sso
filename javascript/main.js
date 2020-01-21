@@ -1,5 +1,4 @@
 var LOGORA_SECRET = "12345";
-var LOGORA_PUBLIC = "asdf";
 
 function logoraSignon(user) {
     var logoraData = {
@@ -28,7 +27,6 @@ function logoraSignon(user) {
     var hexsig = CryptoJS.enc.Hex.stringify(result);
 
     return {
-      pubKey: LOGORA_PUBLIC,
-      auth: message + " " + hexsig + " " + timestamp
+      remote_auth: message + " " + hexsig + " " + timestamp
     };
 }
