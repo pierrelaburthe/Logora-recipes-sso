@@ -5,7 +5,6 @@ import simplejson
 import time
 
 LOGORA_SECRET_KEY = '123456'
-LOGORA_PUBLIC_KEY = 'abcdef'
 
 def get_logora_sso(user):
     # create a JSON packet of our data attributes
@@ -24,9 +23,8 @@ def get_logora_sso(user):
 
 # return a script tag to insert the sso message
     return """<script type="text/javascript">
-    var logora_config = function() {
-        this.page.remote_auth_s3 = "%(message)s %(sig)s %(timestamp)s";
-        this.page.api_key = "%(pub_key)s";
+    var logora_config = {
+        remote_auth: "%(message)s %(sig)s %(timestamp)s";
     }
     </script>""" % dict(
         message=message,
